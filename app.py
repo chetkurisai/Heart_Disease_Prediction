@@ -24,10 +24,23 @@ class PatientData(BaseModel):
     ca: int
     thal: int
 
+# Root endpoint
+@app.get("/")
+def read_root():
+    return {
+        "message": "Welcome to the Heart Disease Prediction API.",
+        "endpoints": {
+            "POST /predict": "Send patient data to get prediction",
+            "GET /health": "Check if API is up"
+        }
+    }
+
+# Health check endpoint
 @app.get("/health")
 def health_check():
     return {"status": "API is running"}
 
+# Prediction endpoint
 @app.post("/predict")
 def predict(data: PatientData):
     try:
