@@ -213,9 +213,8 @@ Use Postman or Swagger UI to test endpoints locally.
 
 
 Repository Structure
-bash
-CopyEdit
 ├── data/                      # Raw and processed data files
+|-- documents                   # pdf documents 
 ├── notebooks/                 # Jupyter notebooks for data prep and modeling
 ├── api/                      # FastAPI source code
 │   ├── main.py               # API entry point
